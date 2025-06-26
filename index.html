@@ -313,10 +313,11 @@
                         <th scope="row">CATATAN</th>\
                         <td>' + (feature.properties['CATATAN'] !== null ? autolinker.link(String(feature.properties['CATATAN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-		    '<tr><th scope="row">Bandara</th><td>' + (feature.properties['Bandara'] ?? '') + '</td></tr>' +
-        	    '<tr><th scope="row">Lokasi</th><td>' + (feature.properties['Lokasi'] ?? '') + '</td></tr>' +
-                    '<tr><th scope="row">IATA</th><td>' + (feature.properties['IATA'] ?? '') + '</td></tr>'
-                </table>';
+                </table>' +
+		(feature.properties['Link_Foto_'] ? '<div class="foto-item"><img src="' + feature.properties['Link_Foto_'] + '" alt="Foto 1"></div>' : '') +
+        	(feature.properties['Foto'] ? '<div class="foto-item"><img src="' + feature.properties['Foto'] + '" alt="Foto 2"></div>' : '') +
+        	(feature.properties['FOTO_1'] ? '<div class="foto-item"><img src="' + feature.properties['FOTO_1'] + '" alt="Foto 3"></div>' : '') +
+        	'</div>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
