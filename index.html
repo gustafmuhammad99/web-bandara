@@ -332,22 +332,35 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Data_Bandara_1_0() {
-            return {
-                pane: 'pane_Data_Bandara_1',
-                radius: 4.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,239,0,1.0)',
-                interactive: true,
-            }
-        }
+	function style_Data_Bandara_1_0(feature) {
+    		let warna;
+    		switch (feature.properties['Pemrakarsa']) {
+        		case 'ANGKASA PURA':
+           			warna = 'orange'; break;
+        		case 'PT. ANGKASA PURA I':
+           	 		warna = 'gold'; break;
+        		case 'PT. ANGKASA PURA II':
+            			warna = 'blue'; break;
+        		case 'UPT - DAERAH':
+            			warna = 'green'; break;
+        		case 'UPBU - DJU':
+            			warna = 'red'; break;
+        		default:
+            			warna = 'gray'; // fallback kalau gak cocok
+    			}
+
+    		return {
+        		pane: 'pane_Data_Bandara_1',
+        		radius: 5.5,
+        		opacity: 1,
+        		color: '#000', // outline
+        		weight: 1,
+        		fill: true,
+        		fillOpacity: 0.8,
+        		fillColor: warna,
+        		interactive: true
+    		};
+
         map.createPane('pane_Data_Bandara_1');
         map.getPane('pane_Data_Bandara_1').style.zIndex = 401;
         map.getPane('pane_Data_Bandara_1').style['mix-blend-mode'] = 'normal';
