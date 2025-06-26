@@ -313,11 +313,19 @@
                         <th scope="row">CATATAN</th>\
                         <td>' + (feature.properties['CATATAN'] !== null ? autolinker.link(String(feature.properties['CATATAN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                </table>' +
-		(feature.properties['Link_Foto_'] ? '<div class="foto-item"><img src="' + feature.properties['Link_Foto_'] + '" alt="Foto 1"></div>' : '') +
-        	(feature.properties['Foto'] ? '<div class="foto-item"><img src="' + feature.properties['Foto'] + '" alt="Foto 2"></div>' : '') +
-        	(feature.properties['FOTO_1'] ? '<div class="foto-item"><img src="' + feature.properties['FOTO_1'] + '" alt="Foto 3"></div>' : '') +
-        	'</div>';
+		    <tr>\
+			<th scope="row">Foto 1</th>\
+			<td>' + (feature.properties['Link_Foto_'] !== null ? feature.properties['Link_Foto_'] : 'Tidak tersedia') + '</td>\
+		    </tr>\
+		    <tr>\
+			<th scope="row">Foto 2</th>\
+			<td>' + (feature.properties['Foto'] !== null ? feature.properties['Foto'] : 'Tidak tersedia') + '</td>\
+		    </tr>\
+		    <tr>\
+			<th scope="row">Foto 3</th>\
+			<td>' + (feature.properties['FOTO_1'] !== null ? feature.properties['FOTO_1'] : 'Tidak tersedia') + '</td>\
+		    </tr>\
+                </table>;
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
