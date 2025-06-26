@@ -76,12 +76,47 @@
     		box-shadow: 0 0 3px rgba(0,0,0,0.3);
     		border-radius: 4px;
 	}
+	#legend {
+    		position: absolute;
+    		bottom: 30px;
+    		left: 10px;
+    		background: rgba(255, 255, 255, 0.85);
+    		padding: 10px 15px;
+    		border-radius: 8px;
+    		font-family: Arial, sans-serif;
+    		font-size: 13px;
+    		box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    		z-index: 999;
+	}
+
+	#legend h4 {
+    		margin: 0 0 5px 0;
+    		font-size: 14px;
+    		text-align: center;
+	}	
+
+	.legend-color {
+    		display: inline-block;
+    		width: 14px;
+    		height: 14px;
+    		margin-right: 8px;
+    		vertical-align: middle;
+    		border: 1px solid #ccc;
+	}
 	</style>
         <title></title>
     </head>
     <body>
         <div id="map">
         </div>
+	<div id="legend">
+  	<h4>Pemrakarsa Bandara</h4>
+  	<div><span class="legend-color" style="background:#FF0000;"></span> ANGKASA PURA</div>
+  	<div><span class="legend-color" style="background:#FF8000;"></span> PT. ANGKASA PURA I</div>
+  	<div><span class="legend-color" style="background:#FFFF00;"></span> PT. ANGKASA PURA II</div>
+  	<div><span class="legend-color" style="background:#00FF00;"></span> UPT - DAERAH</div>
+  	<div><span class="legend-color" style="background:#0000FF;"></span> UPBU - DJU</div>
+	</div>
 	<div id="logo-kemenhub">
         	<img src="images/logo_kemenhub.png" alt="Logo Kemenhub">
     	</div>
