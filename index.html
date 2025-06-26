@@ -61,7 +61,22 @@
     		border: 1px solid #ccc;
     		box-shadow: 0 0 3px rgba(0,0,0,0.3);
 	}
-        </style>
+        .foto-gallery {
+    		display: flex;
+    		flex-wrap: wrap;
+    		justify-content: center;
+   		gap: 12px;
+    		margin-top: 10px;
+	}
+
+	.foto-gallery .foto-item img {
+    		max-width: 150px;
+    		height: auto;
+    		border: 1px solid #ccc;
+    		box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    		border-radius: 4px;
+	}
+	</style>
         <title></title>
     </head>
     <body>
@@ -298,18 +313,9 @@
                         <th scope="row">CATATAN</th>\
                         <td>' + (feature.properties['CATATAN'] !== null ? autolinker.link(String(feature.properties['CATATAN']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-					<tr>\
-						<th scope="row">Foto 1</th>\
-						<td>' + (feature.properties['Link_Foto_'] !== null ? feature.properties['Link_Foto_'] : 'Tidak tersedia') + '</td>\
-					</tr>\
-					<tr>\
-						<th scope="row">Foto 2</th>\
-						<td>' + (feature.properties['Foto'] !== null ? feature.properties['Foto'] : 'Tidak tersedia') + '</td>\
-					</tr>\
-					<tr>\
-						<th scope="row">Foto 3</th>\
-						<td>' + (feature.properties['FOTO_1'] !== null ? feature.properties['FOTO_1'] : 'Tidak tersedia') + '</td>\
-					</tr>\
+		    '<tr><th scope="row">Bandara</th><td>' + (feature.properties['Bandara'] ?? '') + '</td></tr>' +
+        	    '<tr><th scope="row">Lokasi</th><td>' + (feature.properties['Lokasi'] ?? '') + '</td></tr>' +
+                    '<tr><th scope="row">IATA</th><td>' + (feature.properties['IATA'] ?? '') + '</td></tr>'
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
