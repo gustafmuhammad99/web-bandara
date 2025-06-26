@@ -19,13 +19,44 @@
             height: 100%;
             padding: 0;
             margin: 0;
-        }
+        .leaflet-popup-content {
+    	    max-width: 600px !important;
+    	    width: auto;
+	}
+
+	.leaflet-popup-content img {
+	    display: block;
+    	    margin: 10px auto;
+    	    max-width: 100% !important;
+    	    height: auto;
+    	    border: 1px solid #ccc;
+     	    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+	}
+
+/* Logo pojok kanan atas */
+	#logo-kemenhub {
+    		position: absolute;
+    		top: 10px;
+    		LEFT: 10px;
+    		z-index: 1000;
+    		background-color: rgba(255, 255, 255, 0.7);
+    		padding: 6px 10px;
+    		border-radius: 8px;
+    		box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	}
+
+	#logo-kemenhub img {
+    		height: 60px;
+	}
         </style>
         <title></title>
     </head>
     <body>
         <div id="map">
         </div>
+	<div id="logo-kemenhub">
+        	<img src="images/logo_kemenhub.png" alt="Logo Kemenhub">
+    	</div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
