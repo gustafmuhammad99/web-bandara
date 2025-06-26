@@ -326,7 +326,7 @@
 			<th scope="row">Foto 3</th>\
 			<td>' + (feature.properties['FOTO_1'] !== null ? feature.properties['FOTO_1'] : 'Tidak tersedia') + '</td>\
 		    </tr>\
-                </table>;
+                </table>
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
 				addClassToPopupIfMedia(content, e.popup);
