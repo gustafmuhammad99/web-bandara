@@ -1,5 +1,4 @@
 var json_Data_Bandara_1 = {
-{
 "type": "FeatureCollection",
 "name": "Data_Bandara_",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
