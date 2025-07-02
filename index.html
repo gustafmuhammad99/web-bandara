@@ -37,16 +37,26 @@
 	#logo-kemenhub {
     		position: absolute;
     		top: 10px;
-    		LEFT: 10px;
+    		left: 10px;
     		z-index: 1000;
     		background-color: rgba(255, 255, 255, 0.7);
     		padding: 6px 10px;
     		border-radius: 8px;
     		box-shadow: 0 0 5px rgba(0,0,0,0.2);
+		display: flex;
+    		align-items: center;
+    		gap: 10px;
 	}
 
 	#logo-kemenhub img {
     		height: 60px;
+	}
+	.judul-kemenhub {
+    		font-size: 14px;
+    		font-weight: bold;
+    		color: #004ba8; /* biru khas Kemenhub */
+    		font-family: Arial, sans-serif;
+    		letter-spacing: 1px;
 	}
 	/* Popup: teks + gambar */
 	.leaflet-popup-content {
@@ -118,8 +128,9 @@
   	<div><span class="legend-color" style="background:#0000FF;"></span> UPBU - DJU</div>
 	</div>
 	<div id="logo-kemenhub">
-        	<img src="images/logo_kemenhub.png" alt="Logo Kemenhub">
-    	</div>
+    		<img src="images/logo_kemenhub.png" alt="Logo Kemenhub">
+    		<span class="judul-kemenhub">KEMENTERIAN PERHUBUNGAN</span>
+	</div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
